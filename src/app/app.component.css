@@ -1,9 +1,10 @@
-.container-flex {
+.grid-container {
   height: 100vh;
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 60px 1fr;
 }
+
 .header {
   background-color: #aaaaaa;
   /*background-color: deeppink;*/
@@ -26,5 +27,34 @@
   background-color: #555555;
   grid-column: 2/3;
   grid-row: 2/3;
-  overflow-y: auto
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 60px 30px 1fr;
+  }
+
+  .header {
+    /*background-color: blue;*/
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .sidebar {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .main {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .p-card {
+    width: 100vw;
+  }
 }
